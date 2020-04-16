@@ -4,7 +4,7 @@
     require 'Persona.php';
     $Persona = new Persona; //instanciación
 
-    verInfo($Persona);
+    //verInfo($Persona);
 
 ?>
 <!doctype html>
@@ -16,5 +16,8 @@
 <body>
     <h1>Vista Persona</h1>
 
+    <?php
+        echo $Persona->verDatos();
+    ?>
 </body>
 </html>

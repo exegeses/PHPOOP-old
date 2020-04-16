@@ -14,3 +14,7 @@
 
 > en Procedural generamos funciones
 
+
+
+Leer getters & setters
+
