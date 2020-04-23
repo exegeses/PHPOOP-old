@@ -2,10 +2,10 @@
 
     require 'Persona.php';
     ## instanciación
-    $Persona = new Persona;
+    $Persona = new Persona('Rick', 'Sanchez');
     /* llamado a seters  */
-    $Persona->setNombre('Cosme');
-    $Persona->setApellido('Fulanito');
+    //$Persona->setNombre('Cosme');
+    //$Persona->setApellido('Fulanito');
 
 ?>
 <!doctype html>
