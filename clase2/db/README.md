@@ -1,16 +1,16 @@
 #######################################################
-###				GUIA para operar con PDO			###
+# 				GUIA para operar con PDO			  #
 #######################################################
 
 
-	1.- Conectar				new PDO()
-	2.- SQL						$sql = "";
-	3.- preparar statement		prepare($sql)
-	4.- ejecutar statement		execute()
-	[5.- traer datos				fetch() || fetchAll()]
+  1. Conectar				new PDO()
+  2. mensaje SQL			$sql = "";
+  3. preparar statement		prepare($sql)
+  4. ejecutar statement		execute()  
+  [5. traer datos			fetch() || fetchAll()]
 
 
-	###				ejemplo				###
+##				ejemplo				##
 
 	$link = new PDO(----);
 	$sql = "SELECT ---- ";
