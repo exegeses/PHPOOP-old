@@ -2,6 +2,11 @@
 
     class Foo
     {
+
+        public function __construct()
+        {
+            echo 'método constructor <br>';
+        }
         public function metodoPublico()
         {
             echo 'método público <br>';
