@@ -25,6 +25,10 @@
             echo 'método estático <br>';
         }
 
+        public function __destruct()
+        {
+            echo 'método destructor';
+        }
     }
 
     #### en otro archivo se instancia
@@ -35,6 +39,9 @@
     //$objFoo->metodoPrivado(); ## no se puede porque es privado
     $objFoo->auxiliar(); ## invoca a un método privado
 
+    unset($objFoo);
+
     echo '<hr>';
 
     Foo::metodoEstatico();
+
