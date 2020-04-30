@@ -7,8 +7,45 @@
         private $regID;
         private $destPrecio;
         private $destAsientos;
-        private $destDisponible;
+        private $destDisponibles;
         private $destActivo;
+
+        public function listarDestinos()
+        {
+            $link = Conexion::conectar();
+            $sql = 'SELECT destID, destNombre, 
+                            regID, 
+                            destPrecio, 
+                            destAsientos, destDisponibles, 
+                            destActivo 
+                    FROM destinos';
+            $stmt = $link->prepare($sql);
+
+            $stmt->execute();
+            $destinos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $destinos;
+
+        }
+
+        public function verDestinoPorID()
+        {
+
+        }
+
+        public function agregarDestino()
+        {
+
+        }
+
+        public function modificarDestino()
+        {
+
+        }
+
+        public function eliminarDestino()
+        {
+
+        }
 
         ######################################
         ####  getters & setters ####
@@ -96,17 +133,17 @@
         /**
          * @return mixed
          */
-        public function getDestDisponible()
+        public function getDestDisponibles()
         {
-            return $this->destDisponible;
+            return $this->destDisponibles;
         }
 
         /**
-         * @param mixed $destDisponible
+         * @param mixed $destDisponibles
          */
-        public function setDestDisponible($destDisponible)
+        public function setDestDisponibles($destDisponible)
         {
-            $this->destDisponible = $destDisponible;
+            $this->destDisponibles = $destDisponible;
         }
 
         /**
