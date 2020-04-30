@@ -40,7 +40,7 @@
 
     ######################################
     ####  getters & setters ####
-        #
+
         public function getRegID()
         {
             return $this->regID;
