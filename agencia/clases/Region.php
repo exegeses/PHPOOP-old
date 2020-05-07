@@ -20,7 +20,22 @@
 
         public function verRegionPorID()
         {
-            
+            $link = Conexion::conectar();
+            $sql = "SELECT regID, regNombre
+                        FROM regiones
+                        WHERE regID = :regID";
+            $stmt = $link->prepare($sql);
+
+            $regID = $_GET['regID'];
+            $stmt->bindParam(':regID', $regID, PDO::PARAM_INT);
+
+            if ($stmt->execute()){
+                $this->setRegID($regID);
+                $datosRegion = $stmt->fetch(PDO::FETCH_ASSOC);
+                $this->setRegNombre($datosRegion['regNombre']);
+                return $this;
+            }
+            return false;
         }
 
         public function agregarRegion()
