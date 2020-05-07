@@ -2,6 +2,8 @@
 
     class Conexion
     {
+        const USUARIO = 'root';
+        const CLAVE = 'root';
         private function __construct()
         {}
         static function conectar()
@@ -11,8 +13,8 @@
 
             $link = new PDO(
                 'mysql:host=localhost;dbname=agencia',
-                'root',
-                'root',
+                self::USUARIO,
+                self::CLAVE,
                 $opciones
             );
             $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
