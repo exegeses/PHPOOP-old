@@ -30,6 +30,23 @@
 
         public function verDestinoPorID()
         {
+            $link = Conexion::conectar();
+            $sql = 'SELECT destID, destNombre, 
+                            d.regID, regNombre,
+                            destPrecio, 
+                            destAsientos, destDisponibles, 
+                            destActivo 
+                    FROM destinos d, regiones r
+                    WHERE d.regID = r.regID
+                      AND d.destID = :destID';
+            $stmt = $link->prepare($sql);
+            $destID = $_GET['destID'];
+            $stmt->bindParam(':destID', $destID, PDO::PARAM_INT);
+            $stmt->execute();
+            $detalle = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            #### llamar a todos los setters para cargar datos en el objeto
+            return $detalle;
 
         }
 
@@ -45,6 +62,9 @@
 
         public function eliminarDestino()
         {
+            $link = Conexion::conectar();
+            $sql = 'DELETE FROM destinos
+                      WHERE destID = :destID';
 
         }
 

@@ -3,9 +3,18 @@
     #### configuración general de sistema  ####
     session_start();
 
-    /*
-     * css seccion activa
-     * */
+
+    ################################
+    ######## autoloader
+    ################################
+    function autoCarga($nClase){
+        require_once 'clases/'.$nClase.'.php';
+    }
+    spl_autoload_register('autoCarga');
+
+/*
+ * css seccion activa
+ * */
 
     function activo($seccion)
     {
