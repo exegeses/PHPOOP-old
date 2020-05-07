@@ -1,7 +1,10 @@
 <?php
 
     require 'config/config.php';
-
+    require 'clases/Conexion.php';
+    require 'clases/Destino.php';
+    $objDestino = new Destino;
+    $destinos = $objDestino->listarDestinos();
     include 'includes/over-all-header.html';
     include 'includes/nav.php';
 ?>
@@ -26,14 +29,14 @@
                 </thead>
                 <tbody>
 <?php
-
+            foreach( $destinos as $destino ){
 ?>
                     <tr>
-                        <td>destino</td>
-                        <td>precio</td>
-                        <td>región</td>
-                        <td>totales</td>
-                        <td>disponibles</td>
+                        <td><?= $destino['destNombre']; ?></td>
+                        <td><?= $destino['destPrecio']; ?></td>
+                        <td><?= $destino['regNombre']; ?></td>
+                        <td><?= $destino['destAsientos']; ?></td>
+                        <td><?= $destino['destDisponibles']; ?></td>
                         <td>
                             <a href="" class="btn btn-outline-secondary">
                                 modificar
@@ -46,7 +49,7 @@
                         </td>
                     </tr>
 <?php
-
+            }
 ?>
                 </tbody>
             </table>
